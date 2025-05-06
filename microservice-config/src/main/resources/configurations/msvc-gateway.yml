@@ -6,18 +6,17 @@ spring:
     name: msvc-gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: students
-          uri: 'http://localhost:8090'
-          predicates:
-            - Path=/api/student/**
-        - id: courses
-          uri: 'http://localhost:9090'
-          predicates:
-            - Path=/api/course/**
+      mvc:
+        routesMap:
+          estudiantes:
+            uri: http://localhost:8090
+            predicates:
+              - Path=/api/student/**
+          cursos:
+            uri: http://localhost:9090
+            predicates:
+              - Path=/api/courses/**
+
 eureka:
   client:
     register-with-eureka: false
