@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: msvc-gateway # Asegúrate de que coincida con el nombre del archivo en el Config Server (msvc-gateway.yml)
+  cloud:
+    config:
+      uri: http://localhost:8888 # La URL de tu Config Server
